@@ -15,7 +15,7 @@ copy C:\LAB6\*.* C:\TEST\*.*
 set "file=%%a"
 call echo %%file:%cd%=%%
 )) > list.txt
-
+:here
 
 cd /C/LAB6/TEST %TEST%  
 for  %%f in (*.txt) do (
