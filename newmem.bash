@@ -7,7 +7,7 @@ N=$1
 while true
 do
 array+=(${elements[@]})
-  if (( "${#array[@]}" > "$N" ))
+  if [[ "${#array[@]}" > "$N" ]]
  then
   exit 1
   fi
