@@ -1,0 +1,2 @@
+catalog test was created successfully
+ping: www.net_nikogo.ru: Name or service not known
