@@ -1,18 +1,14 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]
-then 
-  exit 1
-fi
-  if ! [ -d $(~/.trash) ]
- then
-  mkdir $(~/.trash)
-  fi
-data=$(date "+%d-%m-%Y_%H-%M-%S")
-  ln $1 "(~/.trash)/$(~/trash.log)"
-  rm $1
- if ! [ -e $(~/trash.log) ]
-  then
- touch $(~/trash.log)
+num=$UID
+newfile=$1$UID
+p=$(realpath "$1")
+ if ! [[ -d "$HOME/.trash" ]]
+then mkdir "$HOME/.trash"
+else
+ true
  fi
-  echo "$PWD/$1:$data" >> /trash.log
+ln $1 $newfile
+rm $1
+  echo -e "$p\n$newfile" >> "$HOME/.trash.log"
+
