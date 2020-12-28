@@ -14,7 +14,12 @@ break
 "Yes")
 file_name=$(echo $file | awk -F ":" '{print $1}')
 link_file=$(echo $file | awk -F ":" '{print $2}')
-
+  if [[ -e $file ]] ; then
+ read n
+  ln "$trash/$link_file" "$(/home/user/AllLabs_OS)/$n"
+ else
+  ln "$trash/$link_file" "$file_name"
+  fi
 break
 ;;
 *)
@@ -22,5 +27,6 @@ exit 1
 ;;
 esac
   fi
+rm "$trash/$link_file"
+ # sed -i
 done
-
