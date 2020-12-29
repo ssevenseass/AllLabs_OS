@@ -1,0 +1,13 @@
+#!/bin/bash
+
+  num=$UID
+  newfile=$1$UID
+  p=$(realpath "$1")
+ if ! [[ -d "$HOME/.trash" ]]
+then mkdir "$HOME/.trash"
+ else
+  true
+ fi
+  ln $1 $newfile
+  rm $1
+echo -e "$p\n$newfile" >> "$HOME/.trash.log"
